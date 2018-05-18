@@ -1,0 +1,11 @@
+Porta Digital 5
+51 (Café Ligado) e 52 (Café Desligado)
+
+
+Porta Digital 7
+74 (Pão Ligado) e 75 (Pão Desligado)
+
+
+Porta Digital 9
+97 (Pipoca Ligada) e 98 (Pipoca Desligada)
+

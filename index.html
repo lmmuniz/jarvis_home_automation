@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Jarvis</p>
+
+<button onclick="pin13()">Jarvis, um Café</button>
+
+<script>
+function pin13() {
+	var win = window.open("http://192.168.0.100:8080/?pin=13", '1366002941508','width=500,height=200,left=375,top=330');
+	setTimeout(function () { win.close();}, 3000);
+}
+
+</script>
+
+</body>
+</html>

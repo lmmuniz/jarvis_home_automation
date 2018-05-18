@@ -1,0 +1,64 @@
+5c:cf:7f:8e:8b:7d
+AT+CIFSR = 192.168.0.34
+#include <SoftwareSerial.h>
+
+SoftwareSerial esp8266(2, 3); // RX, TX
+
+void setup() {
+  // Open serial communications and wait for port to open:
+  Serial.begin(9600);
+
+  Serial.println("Goodnight moon!");
+
+  // set the data rate for the SoftwareSerial port
+  esp8266.begin(115200);
+  esp8266.println("Hello, world?");
+}
+
+void loop() { // run over and over
+  if (esp8266.available()) {
+    Serial.write(esp8266.read());
+  }
+  if (Serial.available()) {
+    esp8266.write(Serial.read());
+  }
+}
+
+
+LED_BUILTIN = PORTA 13 do ARDUINO
+
+
+
+Comandos AT pra praca WIFI ESP8266
+
+
+
+//Define a forma de conexão STA (Station)
+AT+CWMODE=1
+
+//Restart do Modulo WIFI
+AT+RST
+
+//Lista redes wifi encontradas
+AT+CWLAP
+
+//Conecta na rede LMMUNIZ
+AT+CWJAP="LMMUNIZ","caioandre02"
+
+//Lista IP obtido
+AT+CIFSR 
+
+//Permite multiplas conexões ao IP obtido
+AT+CIPMUX=1
+
+//Cria servidor web na porta 8080
+AT+CIPSERVER=1,8080
+
+//Ping a um host
+AT+PING="www.uol.com.br"
+AT+PING="www.terra.com.br"
+
+
+
+
+
